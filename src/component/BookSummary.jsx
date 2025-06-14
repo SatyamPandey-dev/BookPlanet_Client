@@ -22,7 +22,7 @@ const BookSummary = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `bookplanetbackend-production.up.railway.app/api/getOne/books/${id}`
+          `https://bookplanetbackend-production.up.railway.app/api/getOne/books/${id}`
         );
         setBook(response.data.books);
       } catch (error) {
@@ -37,7 +37,7 @@ const BookSummary = () => {
     const sendSummaryRequest = async (bookUrl) => {
       try {
         const response = await axios.post(
-          "bookplanetbackend-production.up.railway.app/api/action",
+          "https://bookplanetbackend-production.up.railway.app/api/action",
           {
             bookUrl,
             queryType: "summary",
@@ -71,7 +71,7 @@ const BookSummary = () => {
 
     try {
       const response = await axios.post(
-        "bookplanetbackend-production.up.railway.app/api/action",
+        "https://bookplanetbackend-production.up.railway.app/api/action",
         {
           bookUrl,
           queryType: "question",

@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes l13 {
+  100% {
+    background-size: 100% 100%;
+  }
+}
+@keyframes glowslow {
+  0% {
+    opacity: 0.1;
+    box-shadow: 0 0 10px white, 0 0 20px rgb(9, 162, 233),
+      0 0 40px rgb(15, 49, 202), 0 0 80px rgb(15, 15, 15);
+    background-color: rgb(221, 214, 248);
+  }
+
+  25% {
+    opacity: 0.3;
+    box-shadow: 0 0 20px white, 0 0 40px rgb(9, 162, 233),
+      0 0 80px rgb(15, 49, 202), 0 0 1600px rgb(15, 15, 15);
+    background-color: rgb(209, 198, 250);
+  }
+
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 40px white, 0 0 80px rgb(9, 162, 233),
+      0 0 160px rgb(15, 49, 202), 0 0 320px rgb(15, 15, 15);
+    background-color: rgb(170, 147, 250);
+    transform: scale(1.02);
+  }
+
+  75% {
+    opacity: 0.8;
+    box-shadow: 0 0 80px white, 0 0 160px rgb(9, 162, 233),
+      0 0 320px rgb(15, 49, 202), 0 0 640px rgb(15, 15, 15);
+    background-color: rgb(120, 83, 252);
+    transform: scale(1.04);
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 40px white, 0 0 80px rgb(9, 162, 233),
+      0 0 160px rgb(15, 49, 202), 0 0 320px rgb(15, 15, 15);
+    background-color: rgb(92, 48, 253);
+    transform: scale(1.06);
+  }
+}
+
+@keyframes bgGlow {
+  0% {
+    opacity: 0.1;
+    box-shadow: 0 0 10px white, 0 0 20px rgb(9, 162, 233),
+      0 0 40px rgb(15, 49, 202), 0 0 80px rgb(15, 15, 15);
+    background-color: rgb(7, 19, 246);
+  }
+
+  25% {
+    opacity: 0.3;
+    box-shadow: 0 0 20px white, 0 0 40px rgb(9, 162, 233),
+      0 0 80px rgb(15, 49, 202), 0 0 1600px rgb(15, 15, 15);
+    background-color: rgb(97, 69, 199);
+  }
+
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 40px white, 0 0 80px rgb(9, 162, 233),
+      0 0 160px rgb(15, 49, 202), 0 0 320px rgb(15, 15, 15);
+    background-color: rgb(91, 82, 130);
+  }
+
+  75% {
+    opacity: 0.8;
+    box-shadow: 0 0 80px white, 0 0 160px rgb(9, 162, 233),
+      0 0 320px rgb(15, 49, 202), 0 0 640px rgb(15, 15, 15);
+    background-color: rgb(42, 39, 51);
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 40px white, 0 0 80px rgb(9, 162, 233),
+      0 0 160px rgb(15, 49, 202), 0 0 320px rgb(15, 15, 15);
+    background-color: rgb(0, 0, 0);
+  }
+}
+
+body {
+  margin: 0;
+  /* display: flex; */
+  overflow-x: hidden;
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
+  font-size: 1rem;
+  font-size: 16px;
+  font-size: 100%;
+  font-size: 1em;
+  font-size: 100%;
+}
+
+.addBt:hover {
+  /* animation: box-shadow bg-red 2 0.5; */
+  animation: glowslow 3s linear infinite alternate;
+}
+.addBt-con-glowslow {
+  animation: bgGlow 3s linear infinite alternate;
+}
+
+.card:hover {
+  transform: scale(1.03) 1.5s;
+  cursor: pointer;
+  box-shadow: 0 0 20px white, 0 0 40px rgb(9, 162, 233),
+    0 0 80px rgb(15, 49, 202), 0 0 100px rgb(15, 15, 15);
+  .hoverImg:hover {
+    transform: scale(1.02) 1.5s;
+  }
+}
+.thin-scrollbar::-webkit-scrollbar {
+  height: 4px; /* horizontal scrollbar height */
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: #1f1f1f; /* optional dark background */
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Tailwind's gray-400 */
+  border-radius: 10px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280; /* Tailwind's gray-600 */
+}
+/* Optional: Add a transition effect */
+.thin-scrollbar {
+  transition: background-color 0.3s ease;
+}
+
+@keyframes scales {
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+.back-card {
+  transition: transform 1s linear delay 0.3s;
+}
+
+.book-card:hover {
+  animation: scales linear 1s;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Select file";
+  display: inline-block;
+  background: linear-gradient(top, #121212);
+  border: 1px solid #04bbf3;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: rgb(75, 176, 243);
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #121212);
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 124px;
+  height: 24px;
+  -webkit-mask: conic-gradient(
+        from 135deg at top,
+        #0000,
+        #000 0.5deg 90deg,
+        #0000 90.5deg
+      )
+      0 0,
+    conic-gradient(
+        from -45deg at bottom,
+        #0000,
+        #000 0.5deg 90deg,
+        #0000 90.5deg
+      )
+      0 100%;
+  -webkit-mask-size: 25% 50%;
+  -webkit-mask-repeat: repeat-x;
+  background: linear-gradient(#25b09b 0 0) left/0% 100% no-repeat #ddd;
+  animation: l13 2s infinite linear;
+}

@@ -22,7 +22,7 @@ const BookSummary = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/getOne/books/${id}`
+          `bookplanetbackend-production.up.railway.app/api/getOne/books/${id}`
         );
         setBook(response.data.books);
       } catch (error) {
@@ -36,10 +36,13 @@ const BookSummary = () => {
   useEffect(() => {
     const sendSummaryRequest = async (bookUrl) => {
       try {
-        const response = await axios.post("http://localhost:3000/api/action", {
-          bookUrl,
-          queryType: "summary",
-        });
+        const response = await axios.post(
+          "bookplanetbackend-production.up.railway.app/api/action",
+          {
+            bookUrl,
+            queryType: "summary",
+          }
+        );
         setSummary(response.data.result);
         setMessages([{ from: "bot", text: response.data.result }]);
       } catch (error) {
@@ -67,11 +70,14 @@ const BookSummary = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/action", {
-        bookUrl,
-        queryType: "question",
-        question: userQuestion,
-      });
+      const response = await axios.post(
+        "bookplanetbackend-production.up.railway.app/api/action",
+        {
+          bookUrl,
+          queryType: "question",
+          question: userQuestion,
+        }
+      );
 
       const aiReply =
         response.data?.result ||

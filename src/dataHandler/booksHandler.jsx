@@ -37,7 +37,7 @@ export const booksHandler = async (formData, navigate) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/upload",
+      "bookplanetbackend-production.up.railway.app/api/upload",
       formData,
       {
         headers: {

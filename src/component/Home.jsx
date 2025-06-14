@@ -12,7 +12,9 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/get/books");
+        const response = await axios.get(
+          "bookplanetbackend-production.up.railway.app/api/get/books"
+        );
         setBook(response.data.books);
         if (response.data.books.length > 0) {
           setLoading(false);

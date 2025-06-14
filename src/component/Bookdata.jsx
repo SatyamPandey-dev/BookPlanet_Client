@@ -32,7 +32,7 @@ const Bookdata = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/getOne/books/${id}`
+          `bookplanetbackend-production.up.railway.app/api/getOne/books/${id}`
         );
 
         setBook(response.data.books);
